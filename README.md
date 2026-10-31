@@ -4,15 +4,19 @@ An AMX Mod X plugin for Counter-Strike 1.6 that fixes a mismatch between where t
 
 ## The Problem
 
-With the stock Dual Elites, bullets land above the bullet marks they leave on the wall, at about twice the visible recoil. The marks can look like they are right on an opponent while the opponent takes no damage.
+When the stock Dual Elites are fired very quickly, the bullets hit above the bullet marks they leave. The marks sit at about half the angle between the crosshair and the real hit, so they can look like they are right on an opponent while the opponent takes no damage.
 
-The screenshots below show the problem with the stock weapon. The bullet marks stay low on the wall, while the colored lines rise roughly twice as far.
+The bug was reported by satnatantas in [ValveSoftware/halflife#2822](https://github.com/ValveSoftware/halflife/issues/2822), which is still open. According to the report, it appears at about 10 to 13 shots per second and does not depend on `cl_lw`. It does not show on servers running ReGameDLL, where the fire rate of the Dual Elites is reduced.
 
-![Dual Elites shots rising above the bullet marks](images/elites_recoil_1.jpg)
+The screenshots below are from that report. In the first one, the broken glass shows where the bullets really went, compared with the bullet marks below it.
 
-![Dual Elites shots rising above the bullet marks, second angle](images/elites_recoil_2.jpg)
+![Actual recoil compared with displayed recoil](images/elites_recoil_annotated.jpg)
 
-These screenshots were taken by another player who noticed the same issue. I do not know their original source. If they are yours, please open an issue so I can credit you or remove them.
+The next two were taken with a tracer plugin. The colored lines rise about twice as far as the bullet marks.
+
+![Tracer lines rising above the bullet marks](images/elites_recoil_1.jpg)
+
+![Tracer lines rising above the bullet marks, second angle](images/elites_recoil_2.jpg)
 
 ## The Fix
 
