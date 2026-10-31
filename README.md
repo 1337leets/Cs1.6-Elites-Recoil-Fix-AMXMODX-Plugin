@@ -22,6 +22,8 @@ The next two were taken with a tracer plugin. The colored lines rise about twice
 
 The plugin hooks `Ham_Weapon_PrimaryAttack` on `weapon_elite` after each shot and multiplies `pev_punchangle` by `RECOIL_MULT`, which is 0.5 by default. With the recoil halved, the bullets land where the marks show. I confirmed this by testing in game.
 
+The fix is an AMX Mod X plugin, so it only applies on servers that run it. It does not change the game itself or fix the bug on other servers.
+
 `RECOIL_MULT` is a `#define` at the top of `elites_fix.sma`, so changing it requires recompiling.
 
 ## Installation
